@@ -1,0 +1,95 @@
+@keyframes slideIn {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: 200px;
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  to {
+    height: 0;
+    opacity: 0;
+  }
+  from {
+    height: 200px;
+    opacity: 1;
+  }
+}
+
+body {
+  background-color: #242424;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.record-box {
+  width: 1250px;
+  height: 1000px;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+.slot-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.slot-row {
+  width: 250px;
+  height: 600px;
+  background: #161a1d;
+  overflow: hidden;
+}
+
+.center-highlight {
+  position: absolute;
+  z-index: 1000;
+  background: rgba(255, 0, 0, .1);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: calc(calc(3 * 250px) + calc(2 * 1rem) + 1px) !important;
+  height: 200px;
+}
+
+.slot-item {
+  position: relative;
+  width: 250px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: slideIn;
+  animation-duration: 0.25s;
+  animation-fill-mode: forwards;
+}
+
+img {
+  width: 180px;
+  height: 180px;
+}
+
+.fade-out {
+  animation-name: slideOut;
+  animation-duration: 0.25s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+span {
+  margin: 0 10px;
+  color: white;
+}
